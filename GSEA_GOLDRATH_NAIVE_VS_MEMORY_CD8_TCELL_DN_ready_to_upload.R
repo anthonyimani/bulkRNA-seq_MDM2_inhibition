@@ -26,7 +26,6 @@ gene_map <- bitr(
   OrgDb    = org.Hs.eg.db
 )
 
-# ── STEP 4 · Merge IDs & create ranked gene list ───────────────
 res_df <- res_df %>%
   left_join(gene_map, by = c("gene_name" = "SYMBOL")) %>%
   filter(!is.na(ENTREZID))
